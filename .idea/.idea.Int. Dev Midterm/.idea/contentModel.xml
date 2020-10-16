@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\kyraz\.Rider2019.2\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\kyraz\.Rider2019.2\system\resharper-host\local\Transient\ReSharperHost\v192\SolutionCaches\_Int. Dev Midterm.547466005.00" t="ExcludeRecursive" />
+    <e p="C:\Users\kyraz\Documents\Unity Projects\Int. Dev Midterm" t="IncludeRecursive">
+      <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
+      <e p="Assets" t="Include">
+        <e p="Samples" t="Include">
+          <e p="2D Animation" t="Include">
+            <e p="3.2.3" t="Include">
+              <e p="Samples" t="Include">
+                <e p="5 SpriteSwap" t="Include">
+                  <e p="Scripts" t="Include">
+                    <e p="Editor" t="Include">
+                      <e p="BuildAssetBundle.cs" t="Include" />
+                      <e p="Unity.2D.Animation.Samples.Editor.asmdef" t="Include" />
+                    </e>
+                    <e p="Runtime" t="Include">
+                      <e p="LoadSwapDLC.cs" t="Include" />
+                      <e p="SwapFullSkin.cs" t="Include" />
+                      <e p="SwapPart.cs" t="Include" />
+                      <e p="Unity.2D.Animation.Samples.Runtime.asmdef" t="Include" />
+                    </e>
+                  </e>
+                </e>
+                <e p="Scripts" t="Include">
+                  <e p="AnimationSampleDependency.cs" t="Include" />
+                  <e p="Unity.2D.Animation.Samples.Dependency.asmdef" t="Include" />
+                </e>
+              </e>
+            </e>
+          </e>
+        </e>
+        <e p="Scripts" t="Include">
+          <e p="CollectibleScript.cs" t="Include" />
+          <e p="GameManager.cs" t="Include" />
+          <e p="PedestalScript.cs" t="Include" />
+          <e p="PlayerScript.cs" t="Include" />
+        </e>
+      </e>
+      <e p="Int. Dev Midterm.sln" t="IncludeFlat" />
+      <e p="obj" t="ExcludeRecursive" />
+      <e p="Packages" t="ExcludeRecursive" />
+      <e p="Temp\bin" t="ExcludeRecursive" />
+      <e p="Unity.2D.Animation.Samples.Dependency.csproj" t="IncludeRecursive" />
+      <e p="Unity.2D.Animation.Samples.Editor.csproj" t="IncludeRecursive" />
+      <e p="Unity.2D.Animation.Samples.Runtime.csproj" t="IncludeRecursive" />
+    </e>
+  </component>
+</project>
