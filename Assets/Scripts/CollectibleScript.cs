@@ -5,20 +5,20 @@ using UnityEngine;
 
 public class CollectibleScript : MonoBehaviour
 {
-    public int pieceNumber;
+    public string pieceColor;
 
-    private GameManager manager;
+    private PlayerScript player;
 
     void Start()
     {
-        manager = GameObject.Find("Manager").GetComponent<GameManager>();
+        player = GameObject.Find("Dawn").GetComponent<PlayerScript>();
     }
     
     private void OnTriggerEnter2D(Collider2D col)
     {
         if (col.gameObject.tag == "Player")
         {
-            manager.collectedPieces.Add(pieceNumber);
+            player.collectedPieces.Add(pieceColor);
             Destroy(gameObject);
         }
     }

@@ -8,29 +8,39 @@ public class PedestalScript : MonoBehaviour
 {
     private Text pedestalText;
     public string pedestalColor;
-    private GameManager manager;
-    public GameObject panel;
+
+    private PlayerScript player;
     
     // Start is called before the first frame update
     void Start()
     {
         pedestalText = gameObject.GetComponentInChildren<Text>();
-        manager = GameObject.Find("Manager").GetComponent<GameManager>();
+        player = GameObject.Find("Dawn").GetComponent<PlayerScript>();
     }
     
     private void OnTriggerStay2D(Collider2D col)
     {
-        pedestalText.text = "Press Space to Use.";
-
-        if (col.gameObject.tag == "Player")
-        {
-            Debug.Log("panel should move");
-        }
+        pedestalText.text = "Press G to Use.";
 
         if (col.gameObject.tag == "Player" && Input.GetKeyDown(KeyCode.G))
         {
-            Debug.Log("panel move");
-            panel.GetComponent<RectTransform>().Translate(0, 0, 0);
+            if (player.collectedPieces.Contains(pedestalColor))
+            {
+                Debug.Log("key inserted");
+
+                if (pedestalColor == "pink")
+                {
+                    player.doubleJump = true;
+                }
+                else if (pedestalColor == "orange")
+                {
+                    player.dash = true;
+                }
+                else
+                {
+                    
+                }
+            }
         }
     }
 

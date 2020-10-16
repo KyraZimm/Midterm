@@ -5,15 +5,21 @@ using UnityEngine;
 
 public class PlayerScript : MonoBehaviour
 {
+    //movement & physics
     private float horizontalInput;
-    private bool canJump;
-    private bool isJumping;
-
     private Rigidbody2D rb;
-    private float jumpHeight = 2, speed = 5;
+    private float jumpHeight = 10, speed = 5;
+    private int jumpCount = 1;
     
     //animation
     private Animator dawnAnim;
+    
+    //abilities
+    public bool doubleJump = false;
+    public bool dash = false;
+    
+    //inventory
+    public List<string> collectedPieces;
 
    
     void Start()
@@ -29,15 +35,19 @@ public class PlayerScript : MonoBehaviour
         horizontalInput = Input.GetAxis("Horizontal");
         
         Animate();
+
+        
+        if (Input.GetButtonDown("Jump") && jumpCount > 0)
+        {
+            rb.velocity = new Vector2(0, 0);
+            rb.AddForce(Vector2.up * jumpHeight, ForceMode2D.Impulse);
+            jumpCount--;
+        }
+        
+        Debug.Log(collectedPieces.Count);
     }
 
     void FixedUpdate()
-    {
-        MovementControls();
-
-    }
-
-    void MovementControls()
     {
         Vector2 inputMagnitude = new Vector2(horizontalInput * speed, rb.velocity.y);
 
@@ -48,31 +58,35 @@ public class PlayerScript : MonoBehaviour
         
 
         RaycastHit2D groundCheckRaycastHit =
-            Physics2D.Raycast(transform.position, Vector2.down, jumpHeight, ground);
+            Physics2D.Raycast(new Vector3(transform.position.x + 1.5f, transform.position.y, 0), Vector2.down, 1.7f, ground);
 
 
         if (groundCheckRaycastHit.collider != null)
         {
             Debug.Log("can jump");
-            Debug.DrawRay(transform.position, Vector2.down * jumpHeight, Color.green);
-            canJump = true;
-            isJumping = false;
+            Debug.DrawRay(new Vector3(transform.position.x + 1.5f, transform.position.y, 0), Vector2.down * 1.7f, Color.green);
+            if (doubleJump)
+            {
+                jumpCount = 2;
+            }
+            else
+            {
+                jumpCount = 1;
+            }
         }
         else
         {
-            canJump = false;
-            Debug.DrawRay(transform.position, Vector2.down * jumpHeight, Color.red);
+            if (doubleJump)
+            {
+                jumpCount = 2;
+            }
+            else
+            {
+                jumpCount = 1;
+            }
+            Debug.DrawRay(new Vector3(transform.position.x + 1.5f, transform.position.y, 0), Vector2.down * 1.7f, Color.red);
         }
 
-        if (Input.GetKey(KeyCode.Space) && canJump)
-        {
-            rb.AddForce(Vector2.up * jumpHeight, ForceMode2D.Impulse);
-        }
-        else if (Input.GetKey(KeyCode.Space) && !canJump && isJumping)
-        {
-            //double-jump animation
-            rb.AddForce(Vector2.up * jumpHeight, ForceMode2D.Impulse);
-        }
     }
 
     void Animate()
