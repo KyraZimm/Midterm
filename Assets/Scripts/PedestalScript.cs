@@ -10,6 +10,8 @@ public class PedestalScript : MonoBehaviour
     public string pedestalColor;
 
     private PlayerScript player;
+
+    private bool allowInteraction = false;
     
     // Start is called before the first frame update
     void Start()
@@ -17,14 +19,12 @@ public class PedestalScript : MonoBehaviour
         pedestalText = gameObject.GetComponentInChildren<Text>();
         player = GameObject.Find("Dawn").GetComponent<PlayerScript>();
     }
-    
-    private void OnTriggerStay2D(Collider2D col)
-    {
-        pedestalText.text = "Press G to Use.";
 
-        if (col.gameObject.tag == "Player" && Input.GetKeyDown(KeyCode.G))
+    void Update()
+    {
+        if (allowInteraction)
         {
-            if (player.collectedPieces.Contains(pedestalColor))
+            if (player.collectedPieces.Contains(pedestalColor) && Input.GetKeyDown(KeyCode.G))
             {
                 Debug.Log("key inserted");
 
@@ -43,9 +43,21 @@ public class PedestalScript : MonoBehaviour
             }
         }
     }
+    
+    private void OnTriggerStay2D(Collider2D col)
+    {
+        pedestalText.text = "Press G to Use.";
+
+        if (col.gameObject.tag == "Player")
+        {
+            allowInteraction = true;
+        }
+    }
 
     private void OnTriggerExit2D(Collider2D col)
     {
         pedestalText.text = "";
+
+        allowInteraction = false;
     }
 }
