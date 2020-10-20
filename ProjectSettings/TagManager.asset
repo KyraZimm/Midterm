@@ -42,6 +42,12 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Star
+    uniqueID: 2746008281
+    locked: 0
   - name: Dawn
     uniqueID: 461094707
+    locked: 0
+  - name: Clouds
+    uniqueID: 2387376523
     locked: 0

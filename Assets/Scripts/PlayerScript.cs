@@ -9,10 +9,10 @@ public class PlayerScript : MonoBehaviour
     private float horizontalInput;
     private Rigidbody2D rb;
     private bool canMove = true;
-    private float jumpHeight = 10;
+    private float jumpForce = 11;
 
     //jumping ability
-    private float speed = 5;
+    private float speed = 6;
     private bool grounded = false, secondJump = false;
     public bool doubleJump = false;
     
@@ -21,7 +21,7 @@ public class PlayerScript : MonoBehaviour
     private SpriteRenderer playerSprite;
     
     //dashing
-    public bool dash = false;
+    public bool dash = true;
     
     //inventory
     public List<string> collectedPieces;
@@ -45,7 +45,7 @@ public class PlayerScript : MonoBehaviour
         {
             if (grounded || (doubleJump && !secondJump))
             {
-                rb.AddForce(Vector2.up * jumpHeight, ForceMode2D.Impulse);
+                rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
                 secondJump = false;
 
                 if (!secondJump)
@@ -57,12 +57,11 @@ public class PlayerScript : MonoBehaviour
 
 
         //dashing controls
-        if (Input.GetKeyDown(KeyCode.E) && dash)
+        if (Input.GetButtonDown("Dash") && dash)
         {
             Debug.Log("should dash");
             StartCoroutine(Dash(0.5f));
         }
-        
     }
 
     void FixedUpdate()
@@ -98,19 +97,19 @@ public class PlayerScript : MonoBehaviour
         int ground = LayerMask.GetMask("Ground");
         
         RaycastHit2D groundCheckRaycastHit =
-            Physics2D.Raycast(new Vector3(transform.position.x + 1.5f, transform.position.y, 0), Vector2.down, 1.7f, ground);
+            Physics2D.Raycast(transform.position, Vector2.down, 1.9f, ground);
 
 
         if (groundCheckRaycastHit.collider != null)
         {
             Debug.Log("can jump");
-            Debug.DrawRay(new Vector3(transform.position.x + 1.5f, transform.position.y, 0), Vector2.down * 1.7f, Color.green);
+            Debug.DrawRay(transform.position, Vector2.down * 1.9f, Color.green);
             grounded = true;
             secondJump = false;
         }
         else
         {
-            Debug.DrawRay(new Vector3(transform.position.x + 1.5f, transform.position.y, 0), Vector2.down * 1.7f, Color.red);
+            Debug.DrawRay(transform.position, Vector2.down * 1.9f, Color.red);
             grounded = false;
         }
     }
@@ -121,7 +120,7 @@ public class PlayerScript : MonoBehaviour
         //animate dash
         rb.gravityScale = 0;
 
-        float dashForce = 10;
+        float dashForce = 20;
         if (playerSprite.flipX)
         {
             rb.velocity = Vector2.right*dashForce;
@@ -145,11 +144,11 @@ public class PlayerScript : MonoBehaviour
         }
         else if (rb.velocity.x > 0)
         {
-            playerSprite.flipX = true;
+            
         }
         else if (rb.velocity.x < 0)
         {
-            playerSprite.flipX = false;
+            
         }
     }
 }

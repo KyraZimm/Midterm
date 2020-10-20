@@ -30,11 +30,11 @@ public class PedestalScript : MonoBehaviour
 
                 if (pedestalColor == "pink")
                 {
-                    player.doubleJump = true;
+                    player.dash = true;
                 }
                 else if (pedestalColor == "orange")
                 {
-                    player.dash = true;
+                    player.doubleJump = true;
                 }
                 else
                 {
