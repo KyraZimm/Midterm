@@ -42,7 +42,7 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Star
+  - name: Background
     uniqueID: 2746008281
     locked: 0
   - name: Dawn

@@ -1,19 +1,19 @@
 fileFormatVersion: 2
-guid: a248c7b82670b284884cbf41672839d8
+guid: 8140ac2e1f97dfc4196bee738861c233
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3664289089705865966
-    second: cloud_assets_0
+      213: -5986144676492055126
+    second: dawn_background_0
   - first:
-      213: 7005281493990428001
-    second: cloud_assets_1
+      213: 6819154189767871207
+    second: dawn_background_1
   - first:
-      213: 4664507670832612383
-    second: cloud_assets_2
+      213: 2404480530224864361
+    second: dawn_background_2
   - first:
-      213: 7474467536138920505
-    second: cloud_assets_3
+      213: 3482894239363444846
+    second: dawn_background_3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -43,7 +43,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
+    filterMode: 0
     aniso: -1
     mipBias: -100
     wrapU: 1
@@ -73,7 +73,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 8192
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -85,7 +85,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Standalone
-    maxTextureSize: 2048
+    maxTextureSize: 8192
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -97,7 +97,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: WebGL
-    maxTextureSize: 2048
+    maxTextureSize: 8192
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -111,13 +111,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: cloud_assets_0
+      name: dawn_background_0
       rect:
         serializedVersion: 2
-        x: 15
-        y: 44
-        width: 91
-        height: 44
+        x: 0
+        y: 0
+        width: 3000
+        height: 3000
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -125,20 +125,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 21d0eb5bc74d52dc0800000000000000
-      internalID: -3664289089705865966
+      spriteID: aad6897f121fceca0800000000000000
+      internalID: -5986144676492055126
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cloud_assets_1
+      name: dawn_background_1
       rect:
         serializedVersion: 2
-        x: 135
-        y: 43
-        width: 111
-        height: 48
+        x: 3000
+        y: 0
+        width: 3000
+        height: 3000
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -146,20 +146,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 16dcae83762c73160800000000000000
-      internalID: 7005281493990428001
+      spriteID: 7ea0bbd2b9082ae50800000000000000
+      internalID: 6819154189767871207
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cloud_assets_2
+      name: dawn_background_2
       rect:
         serializedVersion: 2
-        x: 263
-        y: 41
-        width: 118
-        height: 53
+        x: 6000
+        y: 0
+        width: 3000
+        height: 3000
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -167,20 +167,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f1400145309abb040800000000000000
-      internalID: 4664507670832612383
+      spriteID: 96c55618d4e6e5120800000000000000
+      internalID: 2404480530224864361
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cloud_assets_3
+      name: dawn_background_3
       rect:
         serializedVersion: 2
-        x: 385
-        y: 46
-        width: 125
-        height: 35
+        x: 9000
+        y: 0
+        width: 3000
+        height: 3000
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -188,8 +188,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 932efb86f94aab760800000000000000
-      internalID: 7474467536138920505
+      spriteID: e6033878bd9b55030800000000000000
+      internalID: 3482894239363444846
       vertices: []
       indices: 
       edges: []
