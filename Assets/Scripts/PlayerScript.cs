@@ -9,10 +9,10 @@ public class PlayerScript : MonoBehaviour
     private float horizontalInput;
     private Rigidbody2D rb;
     private bool canMove = true;
-    private float jumpForce = 11;
+    private float jumpForce = 13;
 
     //jumping ability
-    private float speed = 6;
+    private float speed = 11;
     private bool grounded = false, secondJump = false;
     public bool doubleJump = false;
     
@@ -22,6 +22,7 @@ public class PlayerScript : MonoBehaviour
     
     //dashing
     public bool dash = true;
+    private bool dashing = false;
     
     //inventory
     public List<string> collectedPieces;
@@ -37,6 +38,8 @@ public class PlayerScript : MonoBehaviour
     
     void Update()
     {
+        Debug.Log(rb.velocity.y);
+        
         //get movement axis
         horizontalInput = Input.GetAxis("Horizontal");
 
@@ -47,6 +50,8 @@ public class PlayerScript : MonoBehaviour
             {
                 rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
                 secondJump = false;
+                
+                
 
                 if (!secondJump)
                 {
@@ -61,6 +66,11 @@ public class PlayerScript : MonoBehaviour
         {
             Debug.Log("should dash");
             StartCoroutine(Dash(0.5f));
+        }
+
+        if (canMove)
+        {
+            Animate();
         }
     }
 
@@ -119,6 +129,8 @@ public class PlayerScript : MonoBehaviour
         canMove = false;
         //animate dash
         rb.gravityScale = 0;
+        
+        dawnAnim.Play("Dawn_Dash");
 
         float dashForce = 20;
         if (playerSprite.flipX)
@@ -138,17 +150,34 @@ public class PlayerScript : MonoBehaviour
 
     void Animate()
     {
-        if (rb.velocity.x == 0)
+        if (grounded)
         {
-            dawnAnim.Play("Dawn_Idle");
+            if (rb.velocity.x == 0)
+            {
+                dawnAnim.Play("Dawn_Idle");
+            }
+            else if (rb.velocity.x != 0)
+            {
+                dawnAnim.Play("Dawn_RunAnim");
+            }
         }
-        else if (rb.velocity.x > 0)
+        else
         {
-            
-        }
-        else if (rb.velocity.x < 0)
-        {
-            
+            if (rb.velocity.y > 0)
+            {
+                if (secondJump)
+                {
+                    dawnAnim.Play("Dawn_DoubleJump");
+                }
+                else
+                {
+                    dawnAnim.Play("Dawn_JumpUp");
+                }
+            }
+            else
+            {
+                dawnAnim.Play("Dawn_Fall");
+            }
         }
     }
 }

@@ -1,25 +1,28 @@
 fileFormatVersion: 2
-guid: 2c82f4f26df500842a5970b07243b357
+guid: 56abbcfb554424e48acfe477b688c36e
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3664289089705865966
-    second: cloud_assets_0
+      213: -6682428135015305169
+    second: dawn_jump_0
   - first:
-      213: 7005281493990428001
-    second: cloud_assets_1
+      213: -4861838713117942823
+    second: dawn_jump_1
   - first:
-      213: 4664507670832612383
-    second: cloud_assets_2
+      213: 567116481152406598
+    second: dawn_jump_2
   - first:
-      213: 7474467536138920505
-    second: cloud_assets_3
+      213: -2141994844153139897
+    second: dawn_jump_3
   - first:
-      213: -8621871789029568706
-    second: cloud_assets_4
+      213: -6183555575772708554
+    second: dawn_jump_4
   - first:
-      213: 8834053456442545179
-    second: cloud_assets_5
+      213: -3202752972921232253
+    second: dawn_jump_5
+  - first:
+      213: 3409226477893834895
+    second: dawn_jump_6
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -79,7 +82,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 4096
+    maxTextureSize: 8192
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -91,7 +94,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Standalone
-    maxTextureSize: 4096
+    maxTextureSize: 8192
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -103,7 +106,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: WebGL
-    maxTextureSize: 4096
+    maxTextureSize: 8192
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -117,13 +120,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: cloud_assets_0
+      name: dawn_jump_0
       rect:
         serializedVersion: 2
-        x: 15
-        y: 44
-        width: 77
-        height: 44
+        x: 0
+        y: 0
+        width: 800
+        height: 800
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -131,20 +134,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 21d0eb5bc74d52dc0800000000000000
-      internalID: -3664289089705865966
+      spriteID: f203657240f3343a0800000000000000
+      internalID: -6682428135015305169
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cloud_assets_1
+      name: dawn_jump_1
       rect:
         serializedVersion: 2
-        x: 135
-        y: 43
-        width: 111
-        height: 48
+        x: 800
+        y: 0
+        width: 800
+        height: 800
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -152,20 +155,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 16dcae83762c73160800000000000000
-      internalID: 7005281493990428001
+      spriteID: 9dbdc551377478cb0800000000000000
+      internalID: -4861838713117942823
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cloud_assets_2
+      name: dawn_jump_2
       rect:
         serializedVersion: 2
-        x: 263
-        y: 41
-        width: 118
-        height: 53
+        x: 1600
+        y: 0
+        width: 800
+        height: 800
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -173,20 +176,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f1400145309abb040800000000000000
-      internalID: 4664507670832612383
+      spriteID: 644db555f6dced700800000000000000
+      internalID: 567116481152406598
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cloud_assets_3
+      name: dawn_jump_3
       rect:
         serializedVersion: 2
-        x: 385
-        y: 46
-        width: 125
-        height: 35
+        x: 2400
+        y: 0
+        width: 800
+        height: 800
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -194,20 +197,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 932efb86f94aab760800000000000000
-      internalID: 7474467536138920505
+      spriteID: 74da88bb90b1642e0800000000000000
+      internalID: -2141994844153139897
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cloud_assets_4
+      name: dawn_jump_4
       rect:
         serializedVersion: 2
-        x: 521
-        y: 45
-        width: 113
-        height: 38
+        x: 3200
+        y: 0
+        width: 800
+        height: 800
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -215,20 +218,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e3f4eebd945f85880800000000000000
-      internalID: -8621871789029568706
+      spriteID: 6318e2937f89f2aa0800000000000000
+      internalID: -6183555575772708554
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cloud_assets_5
+      name: dawn_jump_5
       rect:
         serializedVersion: 2
-        x: 646
-        y: 45
-        width: 120
-        height: 49
+        x: 4000
+        y: 0
+        width: 800
+        height: 800
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -236,8 +239,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b14d11650dcd89a70800000000000000
-      internalID: 8834053456442545179
+      spriteID: 38424b9d3298d83d0800000000000000
+      internalID: -3202752972921232253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dawn_jump_6
+      rect:
+        serializedVersion: 2
+        x: 4800
+        y: 0
+        width: 800
+        height: 800
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f88d7b53b61005f20800000000000000
+      internalID: 3409226477893834895
       vertices: []
       indices: 
       edges: []

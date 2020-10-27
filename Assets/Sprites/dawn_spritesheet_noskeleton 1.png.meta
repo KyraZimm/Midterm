@@ -1,25 +1,31 @@
 fileFormatVersion: 2
-guid: 2c82f4f26df500842a5970b07243b357
+guid: 96bd090f3fb006a459b1c7e5bd61c17e
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3664289089705865966
-    second: cloud_assets_0
+      213: -8935315509666376208
+    second: dawn_spritesheet_noskeleton 1_0
   - first:
-      213: 7005281493990428001
-    second: cloud_assets_1
+      213: 2295539286059762031
+    second: dawn_spritesheet_noskeleton 1_1
   - first:
-      213: 4664507670832612383
-    second: cloud_assets_2
+      213: -3306159693151502935
+    second: dawn_spritesheet_noskeleton 1_2
   - first:
-      213: 7474467536138920505
-    second: cloud_assets_3
+      213: 6949174406212399060
+    second: dawn_spritesheet_noskeleton 1_3
   - first:
-      213: -8621871789029568706
-    second: cloud_assets_4
+      213: -569875091867475793
+    second: dawn_spritesheet_noskeleton 1_4
   - first:
-      213: 8834053456442545179
-    second: cloud_assets_5
+      213: 8468753137729377175
+    second: dawn_spritesheet_noskeleton 1_5
+  - first:
+      213: 8793952936768591245
+    second: dawn_spritesheet_noskeleton 1_6
+  - first:
+      213: 782597439742007808
+    second: dawn_spritesheet_noskeleton 1_7
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -79,7 +85,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 4096
+    maxTextureSize: 8192
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -91,7 +97,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Standalone
-    maxTextureSize: 4096
+    maxTextureSize: 8192
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -103,7 +109,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: WebGL
-    maxTextureSize: 4096
+    maxTextureSize: 8192
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -117,13 +123,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: cloud_assets_0
+      name: dawn_spritesheet_noskeleton 1_0
       rect:
         serializedVersion: 2
-        x: 15
-        y: 44
-        width: 77
-        height: 44
+        x: 331
+        y: 64
+        width: 184
+        height: 666
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -131,20 +137,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 21d0eb5bc74d52dc0800000000000000
-      internalID: -3664289089705865966
+      spriteID: 0f51c42a2e16ff380800000000000000
+      internalID: -8935315509666376208
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cloud_assets_1
+      name: dawn_spritesheet_noskeleton 1_1
       rect:
         serializedVersion: 2
-        x: 135
-        y: 43
-        width: 111
-        height: 48
+        x: 1002
+        y: 93
+        width: 451
+        height: 628
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -152,20 +158,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 16dcae83762c73160800000000000000
-      internalID: 7005281493990428001
+      spriteID: f61cb8181d46bdf10800000000000000
+      internalID: 2295539286059762031
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cloud_assets_2
+      name: dawn_spritesheet_noskeleton 1_2
       rect:
         serializedVersion: 2
-        x: 263
-        y: 41
-        width: 118
-        height: 53
+        x: 1824
+        y: 104
+        width: 372
+        height: 617
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -173,20 +179,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f1400145309abb040800000000000000
-      internalID: 4664507670832612383
+      spriteID: 9ad7dfe96492e12d0800000000000000
+      internalID: -3306159693151502935
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cloud_assets_3
+      name: dawn_spritesheet_noskeleton 1_3
       rect:
         serializedVersion: 2
-        x: 385
-        y: 46
-        width: 125
-        height: 35
+        x: 2622
+        y: 92
+        width: 304
+        height: 629
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -194,20 +200,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 932efb86f94aab760800000000000000
-      internalID: 7474467536138920505
+      spriteID: 4dfa68cdd4d607060800000000000000
+      internalID: 6949174406212399060
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cloud_assets_4
+      name: dawn_spritesheet_noskeleton 1_4
       rect:
         serializedVersion: 2
-        x: 521
-        y: 45
-        width: 113
-        height: 38
+        x: 3363
+        y: 121
+        width: 473
+        height: 600
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -215,20 +221,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e3f4eebd945f85880800000000000000
-      internalID: -8621871789029568706
+      spriteID: fa065ee8f956718f0800000000000000
+      internalID: -569875091867475793
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cloud_assets_5
+      name: dawn_spritesheet_noskeleton 1_5
       rect:
         serializedVersion: 2
-        x: 646
-        y: 45
-        width: 120
-        height: 49
+        x: 4198
+        y: 93
+        width: 396
+        height: 628
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -236,8 +242,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b14d11650dcd89a70800000000000000
-      internalID: 8834053456442545179
+      spriteID: 79395d00c1e078570800000000000000
+      internalID: 8468753137729377175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dawn_spritesheet_noskeleton 1_6
+      rect:
+        serializedVersion: 2
+        x: 5011
+        y: 111
+        width: 317
+        height: 607
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8558978a956a0a70800000000000000
+      internalID: 8793952936768591245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dawn_spritesheet_noskeleton 1_7
+      rect:
+        serializedVersion: 2
+        x: 5802
+        y: 93
+        width: 451
+        height: 628
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00ad3fd99385cda00800000000000000
+      internalID: 782597439742007808
       vertices: []
       indices: 
       edges: []

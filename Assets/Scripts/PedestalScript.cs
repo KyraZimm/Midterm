@@ -18,7 +18,8 @@ public class PedestalScript : MonoBehaviour
     private SpriteRenderer pinkBG;
     private SpriteRenderer yellowBG;
 
-    public Text instructionText;
+    public Camera mainCamera;
+    public Text titleText;
     
 
     // Start is called before the first frame update
@@ -47,7 +48,6 @@ public class PedestalScript : MonoBehaviour
                     StartCoroutine(FadeOut(nightBG));
                     StartCoroutine(FadeIn(purpleBG));
 
-                    instructionText.text = "Left mouse to dash.";
                 }
                 else if (pedestalColor == "pink")
                 {
@@ -97,6 +97,11 @@ public class PedestalScript : MonoBehaviour
             sprite.color = new Color(1, 1, 1, i);
             yield return null;
         }
+    }
+
+    IEnumerator Victory()
+    {
+        yield return null;
     }
     
     

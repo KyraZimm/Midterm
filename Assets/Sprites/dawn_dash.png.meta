@@ -1,25 +1,58 @@
 fileFormatVersion: 2
-guid: 2c82f4f26df500842a5970b07243b357
+guid: 0054eb9a357671246bd90a2aa8ce7b6d
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3664289089705865966
-    second: cloud_assets_0
+      213: -4884658129319404871
+    second: dawn_dash_0
   - first:
-      213: 7005281493990428001
-    second: cloud_assets_1
+      213: 945793925682057316
+    second: dawn_dash_1
   - first:
-      213: 4664507670832612383
-    second: cloud_assets_2
+      213: -179039265781595987
+    second: dawn_dash_2
   - first:
-      213: 7474467536138920505
-    second: cloud_assets_3
+      213: -9193444355403939821
+    second: dawn_dash_3
   - first:
-      213: -8621871789029568706
-    second: cloud_assets_4
+      213: 3239583987288279235
+    second: dawn_dash_4
   - first:
-      213: 8834053456442545179
-    second: cloud_assets_5
+      213: 8198899907126345683
+    second: dawn_dash_5
+  - first:
+      213: -4758624998803252434
+    second: dawn_dash_6
+  - first:
+      213: 8495691325714831313
+    second: dawn_dash_7
+  - first:
+      213: 1620964466286888403
+    second: dawn_dash_8
+  - first:
+      213: 991455877130772611
+    second: dawn_dash_9
+  - first:
+      213: -8024294735268388980
+    second: dawn_dash_10
+  - first:
+      213: 4911810712502993810
+    second: dawn_dash_11
+  - first:
+      213: -4591629690882428877
+    second: dawn_dash_0
+  - first:
+      213: 7059021218310079914
+    second: dawn_dash_1
+  - first:
+      213: 7910645370230738549
+    second: dawn_dash_2
+  - first:
+      213: -9029143491346693943
+    second: dawn_dash_3
+  - first:
+      213: -4370308717764536600
+    second: dawn_dash_4
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -117,13 +150,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: cloud_assets_0
+      name: dawn_dash_0
       rect:
         serializedVersion: 2
-        x: 15
-        y: 44
-        width: 77
-        height: 44
+        x: 0
+        y: 0
+        width: 800
+        height: 800
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -131,20 +164,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 21d0eb5bc74d52dc0800000000000000
-      internalID: -3664289089705865966
+      spriteID: 330f0d6af114740c0800000000000000
+      internalID: -4591629690882428877
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cloud_assets_1
+      name: dawn_dash_1
       rect:
         serializedVersion: 2
-        x: 135
-        y: 43
-        width: 111
-        height: 48
+        x: 800
+        y: 0
+        width: 800
+        height: 800
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -152,20 +185,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 16dcae83762c73160800000000000000
-      internalID: 7005281493990428001
+      spriteID: aa54153d56ea6f160800000000000000
+      internalID: 7059021218310079914
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cloud_assets_2
+      name: dawn_dash_2
       rect:
         serializedVersion: 2
-        x: 263
-        y: 41
-        width: 118
-        height: 53
+        x: 1600
+        y: 0
+        width: 800
+        height: 800
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -173,20 +206,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f1400145309abb040800000000000000
-      internalID: 4664507670832612383
+      spriteID: 57e01b44d0248cd60800000000000000
+      internalID: 7910645370230738549
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cloud_assets_3
+      name: dawn_dash_3
       rect:
         serializedVersion: 2
-        x: 385
-        y: 46
-        width: 125
-        height: 35
+        x: 2400
+        y: 0
+        width: 800
+        height: 800
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -194,20 +227,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 932efb86f94aab760800000000000000
-      internalID: 7474467536138920505
+      spriteID: 9c0004445d902b280800000000000000
+      internalID: -9029143491346693943
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cloud_assets_4
+      name: dawn_dash_4
       rect:
         serializedVersion: 2
-        x: 521
-        y: 45
-        width: 113
-        height: 38
+        x: 3200
+        y: 0
+        width: 800
+        height: 800
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -215,29 +248,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e3f4eebd945f85880800000000000000
-      internalID: -8621871789029568706
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: cloud_assets_5
-      rect:
-        serializedVersion: 2
-        x: 646
-        y: 45
-        width: 120
-        height: 49
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b14d11650dcd89a70800000000000000
-      internalID: 8834053456442545179
+      spriteID: 8e61ad6406b8953c0800000000000000
+      internalID: -4370308717764536600
       vertices: []
       indices: 
       edges: []

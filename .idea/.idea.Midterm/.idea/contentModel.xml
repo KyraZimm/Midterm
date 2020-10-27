@@ -38,6 +38,7 @@
           <e p="GameManager.cs" t="Include" />
           <e p="PedestalScript.cs" t="Include" />
           <e p="PlayerScript.cs" t="Include" />
+          <e p="UIManager.cs" t="Include" />
         </e>
       </e>
       <e p="Midterm.sln" t="IncludeFlat" />
