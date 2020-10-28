@@ -3,24 +3,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PedestalScript : MonoBehaviour
 {
     public string pedestalColor;
 
+    private Text pedestalText;
+
     private PlayerScript player;
 
-    private bool allowInteraction = false;
-    
+    private bool allowInteraction = false, deactivate = false;
+
     //control background
     private SpriteRenderer nightBG;
     private SpriteRenderer purpleBG;
     private SpriteRenderer pinkBG;
     private SpriteRenderer yellowBG;
 
-    public Camera mainCamera;
-    public Text titleText;
-    
+    public UIManager uiScript;
 
     // Start is called before the first frame update
     void Start()
@@ -31,13 +32,17 @@ public class PedestalScript : MonoBehaviour
         purpleBG = GameObject.Find("Background_Purple").GetComponent<SpriteRenderer>();
         pinkBG = GameObject.Find("Background_Pink").GetComponent<SpriteRenderer>();
         yellowBG = GameObject.Find("Background_Orange").GetComponent<SpriteRenderer>();
+
+        pedestalText = GetComponentInChildren<Text>();
+
     }
 
     void Update()
     {
+
         if (allowInteraction)
         {
-            if (player.collectedPieces.Contains(pedestalColor) && Input.GetKeyDown(KeyCode.G))
+            if (player.collectedPieces.Contains(pedestalColor) && Input.GetKeyDown(KeyCode.E))
             {
                 Debug.Log("key inserted");
 
@@ -48,37 +53,52 @@ public class PedestalScript : MonoBehaviour
                     StartCoroutine(FadeOut(nightBG));
                     StartCoroutine(FadeIn(purpleBG));
 
+                    StartCoroutine(uiScript.ShowDashInst());
+
                 }
                 else if (pedestalColor == "pink")
                 {
                     player.doubleJump = true;
                     StartCoroutine(FadeOut(purpleBG));
                     StartCoroutine(FadeIn(pinkBG));
+
+                    StartCoroutine(uiScript.ShowDoubleJumpInst());
                 }
                 else
                 {
                     StartCoroutine(FadeOut(pinkBG));
                     StartCoroutine(FadeIn(yellowBG));
+                    
                 }
+                
+                deactivate = true;
+                allowInteraction = false;
+                pedestalText.text = "";
             }
         }
     }
     
     private void OnTriggerStay2D(Collider2D col)
     {
-        //pedestalText.text = "Press G to Use.";
-
-        if (col.gameObject.tag == "Player")
+        if (col.gameObject.tag == "Player" && !deactivate)
         {
             allowInteraction = true;
+
+            if (player.collectedPieces.Contains(pedestalColor))
+            {
+                pedestalText.text = "Press E To Use";
+            }
         }
     }
 
     private void OnTriggerExit2D(Collider2D col)
     {
-        //pedestalText.text = "";
+        if (col.gameObject.tag == "Player" && !deactivate)
+        {
+            allowInteraction = false;
 
-        allowInteraction = false;
+            pedestalText.text = "";
+        }
     }
     
     IEnumerator FadeIn(SpriteRenderer sprite)

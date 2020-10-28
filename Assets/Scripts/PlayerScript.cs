@@ -8,14 +8,14 @@ public class PlayerScript : MonoBehaviour
     //movement & physics
     private float horizontalInput;
     private Rigidbody2D rb;
-    private bool canMove = true;
-    private float jumpForce = 13;
+    public bool canMove = true, canJump;
+    private float jumpVelocity = 16f;
 
     //jumping ability
-    private float speed = 11;
+    private float speed = 9, jumpTimer, maxJumpTime = 2f;
     private bool grounded = false, secondJump = false;
     public bool doubleJump = false;
-    
+
     //animation
     private Animator dawnAnim;
     private SpriteRenderer playerSprite;
@@ -33,17 +33,39 @@ public class PlayerScript : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         dawnAnim = GetComponent<Animator>();
         playerSprite = GetComponent<SpriteRenderer>();
+
+        jumpTimer = maxJumpTime;
+        
+        dawnAnim.Play("Dawn_DoubleJump");
     }
 
     
     void Update()
     {
-        Debug.Log(rb.velocity.y);
-        
         //get movement axis
         horizontalInput = Input.GetAxis("Horizontal");
 
         //jumping controls
+        while (Input.GetButton("Jump") && canJump)
+        {
+            jumpTimer -= Time.deltaTime;
+            rb.velocity = new Vector2(rb.velocity.x, jumpVelocity);
+            
+            if (jumpTimer <= 0)
+            {
+                canJump = false;
+                jumpTimer = maxJumpTime;
+            }
+        }
+
+        if (Input.GetButtonDown("Jump") && !secondJump && doubleJump && !grounded)
+        {
+            secondJump = true;
+            rb.AddForce(new Vector2(0, 20), ForceMode2D.Impulse);
+        }
+        
+        
+        /*
         if (Input.GetButtonDown("Jump"))
         {
             if (grounded || (doubleJump && !secondJump))
@@ -51,14 +73,13 @@ public class PlayerScript : MonoBehaviour
                 rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
                 secondJump = false;
                 
-                
-
                 if (!secondJump)
                 {
                     secondJump = true;
                 }
             }
         }
+        */
 
 
         //dashing controls
@@ -115,6 +136,7 @@ public class PlayerScript : MonoBehaviour
             Debug.Log("can jump");
             Debug.DrawRay(transform.position, Vector2.down * 1.9f, Color.green);
             grounded = true;
+            canJump = true;
             secondJump = false;
         }
         else
@@ -127,12 +149,11 @@ public class PlayerScript : MonoBehaviour
     IEnumerator Dash(float dashTime)
     {
         canMove = false;
-        //animate dash
         rb.gravityScale = 0;
         
         dawnAnim.Play("Dawn_Dash");
 
-        float dashForce = 20;
+        float dashForce = 30;
         if (playerSprite.flipX)
         {
             rb.velocity = Vector2.right*dashForce;
@@ -143,7 +164,7 @@ public class PlayerScript : MonoBehaviour
         }
         
         yield return new WaitForSeconds(dashTime);
-        rb.gravityScale = 1;
+        rb.gravityScale = 2;
         //animate end of dash
         canMove = true;
     }

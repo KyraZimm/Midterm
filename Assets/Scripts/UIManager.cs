@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
-    public Text AText, DText, SpaceText;
+    public Text AText, DText, SpaceText, InstructText;
     public Image backdrop;
     private bool  showInst = true;
 
@@ -67,13 +67,20 @@ public class UIManager : MonoBehaviour
         yield return null;
     }
 
-    IEnumerator ShowDashInst()
+    public IEnumerator ShowDashInst()
     {
-        yield return null;
+        InstructText.text = "Press Left Mouse To Dash";
+        StartCoroutine(FadeIn(InstructText));
+        yield return new WaitForSeconds(5);
+        StartCoroutine(FadeOut(InstructText));
+
     }
 
-    IEnumerator ShowDoubleJumpInst()
+    public IEnumerator ShowDoubleJumpInst()
     {
-        yield return null;
+        InstructText.text = "Tap Space Twice To Double-Jump";
+        StartCoroutine(FadeIn(InstructText));
+        yield return new WaitForSeconds(5);
+        StartCoroutine(FadeOut(InstructText));
     }
 }
