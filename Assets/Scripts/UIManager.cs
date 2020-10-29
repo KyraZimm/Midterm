@@ -5,9 +5,10 @@ using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
-    public Text AText, DText, SpaceText, InstructText;
+    public Text AText, DText, SpaceText, InstructText, titleText, creditText;
     public Image backdrop;
-    private bool  showInst = true;
+    private bool showInst = true;
+    public bool showTitle = false;
 
     private void Start()
     {
@@ -25,6 +26,12 @@ public class UIManager : MonoBehaviour
             StartCoroutine(FadeOut(DText));
             StartCoroutine(FadePanel(false));
             showInst = false;
+        }
+
+        if (showTitle)
+        {
+            StartCoroutine(TitleFade());
+            showTitle = false;
         }
         
     }
@@ -82,5 +89,14 @@ public class UIManager : MonoBehaviour
         StartCoroutine(FadeIn(InstructText));
         yield return new WaitForSeconds(5);
         StartCoroutine(FadeOut(InstructText));
+    }
+
+    public IEnumerator TitleFade()
+    {
+        yield return new WaitForSeconds(1);
+        titleText.text = "DAWN";
+        creditText.text = "By Kyra Zimmermann";
+        StartCoroutine(FadeIn(titleText));
+        StartCoroutine(FadeIn(creditText));
     }
 }

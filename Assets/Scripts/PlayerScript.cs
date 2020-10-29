@@ -8,7 +8,7 @@ public class PlayerScript : MonoBehaviour
     //movement & physics
     private float horizontalInput;
     private Rigidbody2D rb;
-    public bool canMove = true, canJump;
+    public bool canMove = true, canJump, victory = false;
     private float jumpVelocity = 16f;
 
     //jumping ability
@@ -45,64 +45,75 @@ public class PlayerScript : MonoBehaviour
         //get movement axis
         horizontalInput = Input.GetAxis("Horizontal");
 
-        //jumping controls
-        while (Input.GetButton("Jump") && canJump)
+        if (!victory)
         {
-            jumpTimer -= Time.deltaTime;
-            rb.velocity = new Vector2(rb.velocity.x, jumpVelocity);
-            
-            if (jumpTimer <= 0)
-            {
-                canJump = false;
-                jumpTimer = maxJumpTime;
-            }
-        }
 
-        if (Input.GetButtonDown("Jump") && !secondJump && doubleJump && !grounded)
-        {
-            secondJump = true;
-            rb.AddForce(new Vector2(0, 20), ForceMode2D.Impulse);
-        }
-        
-        
-        /*
-        if (Input.GetButtonDown("Jump"))
-        {
-            if (grounded || (doubleJump && !secondJump))
+            //jumping controls
+            while (Input.GetButton("Jump") && canJump)
             {
-                rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
-                secondJump = false;
-                
-                if (!secondJump)
+                jumpTimer -= Time.deltaTime;
+                rb.velocity = new Vector2(rb.velocity.x, jumpVelocity);
+
+                if (jumpTimer <= 0)
                 {
-                    secondJump = true;
+                    canJump = false;
+                    jumpTimer = maxJumpTime;
                 }
             }
+
+            if (Input.GetButtonDown("Jump") && !secondJump && doubleJump && !grounded)
+            {
+                secondJump = true;
+                rb.AddForce(new Vector2(0, 20), ForceMode2D.Impulse);
+            }
+
+
+            /*
+            if (Input.GetButtonDown("Jump"))
+            {
+                if (grounded || (doubleJump && !secondJump))
+                {
+                    rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+                    secondJump = false;
+                    
+                    if (!secondJump)
+                    {
+                        secondJump = true;
+                    }
+                }
+            }
+            */
+
+
+            //dashing controls
+            if (Input.GetButtonDown("Dash") && dash)
+            {
+                Debug.Log("should dash");
+                StartCoroutine(Dash(0.5f));
+            }
+
+            if (canMove)
+            {
+                Animate();
+            }
         }
-        */
-
-
-        //dashing controls
-        if (Input.GetButtonDown("Dash") && dash)
+        else
         {
-            Debug.Log("should dash");
-            StartCoroutine(Dash(0.5f));
-        }
-
-        if (canMove)
-        {
-            Animate();
+            dawnAnim.Play("Dawn_Idle");
         }
     }
 
     void FixedUpdate()
     {
-        if (canMove)
+        if (!victory)
         {
-            HorizontalMovement();
-        }
+            if (canMove)
+            {
+                HorizontalMovement();
+            }
 
-        CheckForGround();
+            CheckForGround();
+        }
 
     }
 

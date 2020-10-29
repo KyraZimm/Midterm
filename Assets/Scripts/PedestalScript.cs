@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
+using Object = UnityEngine.Object;
 
 public class PedestalScript : MonoBehaviour
 {
@@ -22,6 +22,10 @@ public class PedestalScript : MonoBehaviour
     private SpriteRenderer yellowBG;
 
     public UIManager uiScript;
+    private GameManager gManager;
+
+    private AudioSource audio;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -35,6 +39,9 @@ public class PedestalScript : MonoBehaviour
 
         pedestalText = GetComponentInChildren<Text>();
 
+        gManager = GameObject.Find("Manager").GetComponent<GameManager>();
+
+        audio = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -54,6 +61,8 @@ public class PedestalScript : MonoBehaviour
                     StartCoroutine(FadeIn(purpleBG));
 
                     StartCoroutine(uiScript.ShowDashInst());
+                    
+                    audio.Play();
 
                 }
                 else if (pedestalColor == "pink")
@@ -63,12 +72,17 @@ public class PedestalScript : MonoBehaviour
                     StartCoroutine(FadeIn(pinkBG));
 
                     StartCoroutine(uiScript.ShowDoubleJumpInst());
+                    
+                    audio.Play();
                 }
                 else
                 {
                     StartCoroutine(FadeOut(pinkBG));
                     StartCoroutine(FadeIn(yellowBG));
+
+                    gManager.victoryMet = true;
                     
+                    audio.Play();
                 }
                 
                 deactivate = true;
